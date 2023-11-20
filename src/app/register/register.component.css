@@ -1,0 +1,124 @@
+
+
+ .register-sec-header {
+     display: flex;
+     align-items: center;
+ }
+
+ .container-fluid {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+
+ input,
+ select {
+     box-shadow: none !important;
+     border-color: lightgray !important;
+ }
+
+
+ input.ng-invalid.ng-touched {
+     border: 1px solid red !important;
+ }
+
+ select.ng-invalid.ng-touched {
+     border: 1px solid red !important;
+ }
+
+ input.ng-valid {
+     border: 1px solid green !important;
+ }
+
+ #countrycode:focus {
+     border: 1px solid green !important;
+ }
+
+ select.ng-valid {
+     border: 1px solid green !important;
+ }
+
+
+ .input-container {
+     position: relative;
+     margin-bottom: 10px;
+ }
+
+ .error-container {
+     position: absolute;
+     top: 100%;
+     left: 0;
+     width: 100%;
+
+ }
+
+ .error-text {
+     color: red !important;
+     display: block !important;
+     font-size: 12px !important;
+     position: relative;
+ }
+
+
+ .visibleButton {
+     position: absolute;
+     top: 74%;
+     right: 10px;
+     transform: translateY(-50%);
+     cursor: pointer;
+     background: none;
+     border: none;
+ }
+
+ .visibleButton1 {
+     position: absolute;
+     top: 73%;
+     right: 10px;
+     transform: translateY(-50%);
+     cursor: pointer;
+     background: none;
+     border: none;
+ }
+
+ .password-strength {
+     font-size: 14px;
+     margin-top: 10px;
+
+ }
+
+ .password-strength {
+     position: absolute;
+
+ }
+
+ .password-strength.strong {
+     color: green;
+ }
+
+ .password-strength.moderate {
+     color: chocolate;
+ }
+
+ .password-strength.weak {
+     color: red;
+ }
+
+ input:focus {
+     border: 1px solid #007BFF;
+     outline: none;
+
+ }
+
+ .h-custom {
+     height: calc(100% - 73px);
+ }
+
+ @media (max-width: 350px) {
+     .h-custom {
+         height: 100%;
+     }
+
+  
+ }
+

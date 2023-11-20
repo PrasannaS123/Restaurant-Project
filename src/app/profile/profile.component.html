@@ -1,0 +1,113 @@
+<div style="background-color:#f3f3f9; min-height: 90vh; overflow: hidden;">
+    <div class="container my-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="row my-3 mx-1">
+                    <div class="col-lg-3 col-md-12 col-12  ">
+                        <div class="profile_card card text-center " style="cursor: pointer;">
+                            <div class="d-flex justify-content-around align-items-center mt-4 mb-3">
+                                <h5 class="card-title font-semibold">Profile</h5>&nbsp;
+                                <label for="fileInput" class="btn btn-primary btn-sm">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </label>
+                            </div>
+
+                            <img [src]="profileImageUrl" class="img-thumbnail rounded-circle mx-auto"
+                                style="width: 170px; height: 170px;">
+                            <input type="file" id="fileInput" accept=".png, .jpg" style="display: none" (change)="onFileSelected($event)">
+                            <div class="my-3" style="line-height: 1.2;">
+                                <span style="font-size: 18px; font-weight: 700 ; ">Username <br> <small
+                                        style=" text-transform: uppercase;  font-size: 14px;     color: rgb(168, 166, 166);">Admin</small></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row mt-3 mb-4">
+                                    <div class="col">
+                                        <h5 class="card-title  fw-bold">Profile Details</h5>
+                                    </div>
+                                    <div class="col text-end">
+                                        <a class="btn btn-secondary " routerLink="changePassword"
+                                            style="box-shadow: none; color: white;">
+                                            Change Password
+                                        </a>
+                                    </div>
+                                </div>
+                                <form action="#">
+                                    <div class="row">
+
+                                        <div class="col-lg-6 col-12">
+                                            <label for="res_name" class="form-label">Restaurant Name</label>
+                                            <input type="text" name="res_name" id="res_name" class="form-control mb-3"
+                                                value="New Restaurant">
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" name="email" id="email" class="form-control mb-3"
+                                                value="restaurant@gmail.com">
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <label for="number" class="form-label">Phone Number</label>
+                                            <input type="number" name="mob_number" id="mob_number"
+                                                class="form-control mb-3" value="6383087278">
+                                        </div>
+                                        <div class=" col-lg-6 col-12">
+                                            <label for="address" class="form-label">Address</label>
+                                            <input type="text" name="address" id="address" class="form-control mb-3"
+                                                value="117, Opp To Mtr Hotel, Lalbagh Main Road">
+                                        </div>
+                                        <div class=" col-lg-6 col-12">
+                                            <label for="country" class="form-label">Country</label>
+                                            <select name="country" name="country" class="form-select mb-3">
+                                                <option selected>Choose...</option>
+                                                <option>India</option>
+                                                <option>China</option>
+                                                <option>Japan</option>
+                                                <option>Korea</option>
+                                            </select>
+                                        </div>
+                                        <div class=" col-lg-6 col-12">
+                                            <label for="address" class="form-label">State</label>
+                                            <select name="state" name="state" class="form-select mb-3">
+                                                <option selected>Choose...</option>
+                                                <option>Tamilnadu</option>
+                                                <option>Mumbai</option>
+                                                <option>Kerala</option>
+                                                <option>Karnataka</option>
+                                            </select>
+                                        </div>
+                                        <div class=" col-lg-6 col-12">
+                                            <label for="address" class="form-label">City</label>
+                                            <select name="city" name="city" class="form-select mb-3">
+                                                <option selected>Choose...</option>
+                                                <option>Gobichettipalayam</option>
+                                                <option>Karur</option>
+                                                <option>Pallipalayam</option>
+                                                <option>Bhavani</option>
+                                            </select>
+                                        </div>
+                                        <div class=" col-lg-6 col-12">
+                                            <label for="address" class="form-label">Pin Code</label>
+                                            <input type="number" name="pin" id="pin" class="form-control mb-3"
+                                                value="638986">
+                                        </div>
+                                        <div class="col text-end">
+                                            <a class="btn btn-secondary " style="box-shadow: none; color: white;">
+                                                Update
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

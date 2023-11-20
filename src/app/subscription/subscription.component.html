@@ -1,0 +1,109 @@
+<div style="background-color:#f3f3f9; min-height: 90vh; overflow: auto; ">
+    <div class="container my-3">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalInSubscrption" style="float: right; box-shadow: none;">Add
+                        Subscription</button>
+                </div>
+                <div class="table-responsive text-center">
+                    <table id="myDataTable" class="display ">
+                        <thead>
+                            <tr>
+                                <th class="text-center">S.No</th>
+                                <th>Subscription Name</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Validity</th>
+                                <th class="text-center">Created At</th>
+                                <th class="text-center">Active Status</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td>{{ item.SNo }}</td>
+                                <td class="text-start">{{ item.subscriptionName }}</td>
+                                <td>Rs.{{ item.price }}</td>
+                                <td>{{ item.validity }}</td>
+                                <td>{{ item.createdAt }}</td>
+                                <td>
+                                    <mat-slide-toggle></mat-slide-toggle>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success" data-bs-toggle="modal"
+                                        data-bs-target="#EditexampleModalInSubscription"
+                                        data-bs-transition-duration="300" title style="box-shadow: none;">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button> &nbsp;
+                                    <button class="btn btn-danger">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalInSubscrption" tabindex="-1" aria-labelledby="exampleModalLabelInMeals">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Subscription</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    style="box-shadow: none;" (click)="empty()"></button>
+            </div>
+            <div class="modal-body">
+                <label for="add-Meals" class="form-label">Subscription Name</label>
+                <input type="text" class="form-control mb-3" name="subscription" id="subscription"
+                    style="box-shadow: none;" [(ngModel)]="inputValue">
+                <label for="add-Meals" class="form-label"> Price(₹)</label>
+                <input type="text" class="form-control mb-3" name="price" id="price" style="box-shadow: none;"
+                    [(ngModel)]="inputValue1">
+                <label for="add-Meals" class="form-label">Validity Plan</label>
+                <input type="text" class="form-control mb-3" name="validity" id="validity" style="box-shadow: none;"
+                    [(ngModel)]="inputValue2">
+                <label for="add-Meals" class="form-label">Description</label>
+                <textarea class="form-control" name="description" id="description" rows="3" style="box-shadow: none;"
+                    [(ngModel)]="inputValue3"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="add()">Add</button>
+                <button type="button" class="btn btn-secondary" (click)="empty()" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="EditexampleModalInSubscription" tabindex="-1"
+    aria-labelledby="EditexampleModalInSubscription">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Subscription</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    style="box-shadow: none;" (click)="empty()"></button>
+            </div>
+            <div class="modal-body">
+                <label for="add-Meals" class="form-label">Subscription Name</label>
+                <input type="text" class="form-control mb-3" name="subscription" id="subscription"
+                    style="box-shadow: none;" [(ngModel)]="inputValue">
+                <label for="add-Meals" class="form-label"> Price</label>
+                <input type="text" class="form-control mb-3" name="price" id="price" style="box-shadow: none;"
+                    [(ngModel)]="inputValue1">
+                <label for="add-Meals" class="form-label">Validity Plan</label>
+                <input type="text" class="form-control mb-3" name="validity" id="validity" style="box-shadow: none;"
+                    [(ngModel)]="inputValue2">
+                <label for="add-Meals" class="form-label">Description</label>
+                <textarea class="form-control" name="description" id="description" rows="3" style="box-shadow: none;"
+                    [(ngModel)]="inputValue3"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="edit()">Edit</button>
+                <button type="button" class="btn btn-secondary" (click)="empty()" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

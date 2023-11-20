@@ -1,0 +1,108 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="true" class="text-center " #drawer class="sidenav"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar-row>
+      <button (click)=sidenav.toggle() mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="example-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="ms-auto">
+        <mat-icon matBadge="3" matBadgeColor="warn">notifications</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="my-menu">
+        <div class="card" style="border: none;">
+          <div class="card-header fw-semibold">
+            <span style="font-size: 18px; ">Notifications</span>
+            <button class="px-2 fw-semibold "
+              style="float: right; border: none; background-color: black; color: white; border-radius: 5px;"> 3
+              New</button>
+          </div>
+          <div class="card-body ">
+            <button mat-menu-item class="my-2">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="flex-shrink-0 ">
+                  <span class="material-icons" style="font-size: 33px; color: rgb(0, 128, 55);">fastfood</span>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <span style="font-size: 14px;"> Your table is ready. Enjoy a delectable meal with us
+                    tonight. We
+                    look
+                    forward to
+                    serving
+                    you!</span>
+                </div>
+              </div>
+            </button>
+            <button mat-menu-item class="my-2">
+
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="flex-shrink-0 ">
+                  <span class="material-icons" style="font-size: 35px; color: rgb(255, 210, 48);">dining</span>
+                </div>
+                <div class="flex-grow-1 ms-3 ">
+                  <span style="font-size: 14px;">Join us tonight at Our Restaurant for a delectable dinner!
+                    Reserve
+                    your
+                    table now!</span>
+                </div>
+              </div>
+
+            </button>
+            <button mat-menu-item>
+              <div class="d-flex align-items-center justify-content-center">
+                <div class="flex-shrink-0 ">
+                  <span class="material-icons"
+                    style="color: rgb(237, 95, 30); font-size: 38px;">emoji_food_beverage</span>
+                </div>
+                <div class="flex-grow-1 ms-2">
+                  <span style="font-size: 14px;">Join us for a delightful dining experience and receive exclusive
+                    restaurant notifications today!</span>
+                </div>
+              </div>
+            </button>
+            <button class="btn btn-success mt-3 ">View All Notifications</button>
+          </div>
+        </div>
+      </mat-menu>
+      &nbsp;&nbsp;&nbsp;
+      <div class="dropdown">
+        <a class=" text-decoration-none text-dark" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false" style="cursor: pointer;">
+          <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <img class="img-thumbnail rounded-circle" style="width: 40px; height: 40px;"
+                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg">
+            </div>
+            <div class="flex-grow-1 ms-2">
+              <span class=" align-top d-none d-xl-inline-block ">Username</span>
+              <span class="d-none d-xl-block" style="font-size: 12px; ">Admin</span>
+            </div>
+          </div>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" routerLink="profile" (click)="updatePageTitle('Profile')">Profile</a>
+          <a class="dropdown-item" href="#">Log Out</a>
+        </div>
+      </div>
+    </mat-toolbar-row>
+
+    <nav class="px-3 py-1 mt-2 d-flex align-items-center justify-content-between"
+      [style.background-color]="isDashboardOrProfile() ? 'lightsteelblue' : 'lightsteelblue'"
+      [style.--bs-breadcrumb-divider]="getBreadcrumbUrl()" aria-label="breadcrumb">
+      <span class="heading">{{ pageTitle }}</span>
+      <ol class="breadcrumb fs-6 mt-3">
+        <li class="breadcrumb-item "><a routerLink="{{pageTitle | lowercase}}" class="text-decoration-none">{{ pageTitle
+            }}</a>
+        <li class="breadcrumb-item active" aria-current="page">{{ activeChildTitle }}</li>
+        <li *ngIf="showAddUserBreadcrumb" class="breadcrumb-item active" aria-current="page">Add User</li>
+        <li *ngIf="showEditUserBreadcrumb" class="breadcrumb-item active" aria-current="page">Edit User</li>
+        <li *ngIf="showViewUserBreadcrumb" class="breadcrumb-item active" aria-current="page">View </li>
+        <li *ngIf="showPasswordBreadcrumb" class="breadcrumb-item active" aria-current="page">Change Password </li>
+      </ol>
+    </nav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

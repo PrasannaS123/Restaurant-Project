@@ -1,0 +1,83 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  background-color: #405189;
+
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  color: white !important;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: -1;
+}
+
+.mat-drawer-side {
+  border: none !important;
+
+}
+
+::ng-deep .my-menu {
+  width: 400px !important;
+  max-width: 500px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.card-header {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.example-container {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid #555;
+}
+
+::ng-deep .mat-toolbar {
+  color: white !important;
+}
+
+::ng-deep .navbar-class {
+  color: black !important;
+  background-color: #fff !important;
+
+}
+
+.heading-class {
+  background-color: #405189;
+}
+
+::ng-deep.name {
+  font-size: 16px !important;
+}
+
+::ng-deep.mat-sidenav-container {
+  z-index: 1000;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 15px !important;
+  text-transform: uppercase;
+  color: #495057;
+
+}
+

@@ -1,0 +1,39 @@
+::ng-deep .mat-toolbar {
+    color: white !important;
+}
+
+::ng-deep .navbar-class {
+    color: black !important;
+    background-color: #fff !important;
+}
+
+.heading-class {
+    background-color: #405189;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+    position: absolute;
+    right: 5%;
+}
+.menu-button.rotated {
+    transform: rotate(180deg);
+}
+.submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+  
+}
+
+.submenu.expanded {
+    transform: scaleY(1);
+}
+
+

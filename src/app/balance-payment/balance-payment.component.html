@@ -1,0 +1,50 @@
+<div style="background-color:#f3f3f9; min-height: 90vh; overflow: auto; ">
+    <div class="container my-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive  text-center">
+                    <table id="myDataTable" class="display ">
+                        <thead>
+                            <tr>
+                                <th class="text-center">S.No</th>
+                                <th>User Name</th>
+                                <th class="text-center">Payment Plan</th>
+                                <th class="text-center">Payment Method 1</th>
+                                <th class="text-center">Payment Method 2</th>
+                                <th class="text-center"> Payment Status</th>
+                                <th class="text-center"> Payment Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td>{{ item.SNo }}</td>
+                                <td class="text-start">{{ item.UserName }}</td>
+                                <td>Rs.{{ item.plan }}</td>
+                                <td>
+                                    {{item.method}}
+                                </td>
+                                <td>
+                                    {{item.method1}}
+                                </td>
+                                <td>
+                                    <span [ngStyle]="{ 'color': item.paid ? '#3CA544' : 'red' }">
+                                        <span class="badge bg-success " *ngIf="item.paid">Paid</span>
+                                        <span class="badge bg-danger" *ngIf="!item.paid">Not Paid</span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <ng-container *ngIf="item.paid; else notPaidBalance">
+                                        <span class="paid-color">0</span>
+                                    </ng-container>
+                                    <ng-template #notPaidBalance>
+                                        <span [ngClass]="{ 'not-paid': !item.paid }">{{ item.plan }}</span>
+                                    </ng-template>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

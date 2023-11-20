@@ -1,0 +1,90 @@
+<div style="background-color:#f3f3f9; min-height: 90vh; overflow: hidden; ">
+    <div class="container my-4">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalInCuisines" style="float: right; box-shadow: none;">Add
+                        Cuisines</button>
+                </div>
+                <div class="modal fade" id="exampleModalInCuisines" tabindex="-1"
+                    aria-labelledby="exampleModalLabelInCuisines">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Cuisines</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    style="box-shadow: none;" (click)="empty()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="add-cuisines" class="form-label">Cuisine Name</label>
+                                <input type="text" class="form-control" name="cuisines" id="cuisines"
+                                    style="box-shadow: none;" [(ngModel)]="inputValue">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                    (click)="add()">Add</button>
+                                <button type="button" class="btn btn-secondary" (click)="empty()"
+                                    data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive text-center">
+                    <table id="myDataTable" class="display ">
+                        <thead>
+                            <tr>
+                                <th class="text-center">S.No</th>
+                                <th>Cuisine Name</th>
+                                <th class="text-center">Created At</th>
+                                <th class="text-center">Active Status</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td>{{ item.SNo }}</td>
+                                <td class="text-start">{{ item.cuisineName }}</td>
+                                <td>{{ item.createdAt }}</td>
+                                <td><mat-slide-toggle></mat-slide-toggle>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success" data-bs-toggle="modal"
+                                        data-bs-target="#EditexampleModalInCuisines" style="box-shadow: none;">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button> &nbsp;
+                                    <button class="btn btn-danger" style="box-shadow: none;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal fade" id="EditexampleModalInCuisines" tabindex="-1"
+                    aria-labelledby="EditexampleModalInCuisines">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Cuisine</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    style="box-shadow: none;" (click)="empty()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="add-cuisines" class="form-label">Cuisine Name</label>
+                                <input type="text" class="form-control" name="cuisines" id="cuisines"
+                                    style="box-shadow: none;" [(ngModel)]="inputValue">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                    (click)="edit()">Edit</button>
+                                <button type="button" class="btn btn-secondary" (click)="empty()"
+                                    data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

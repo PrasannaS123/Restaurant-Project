@@ -1,0 +1,84 @@
+.card-body h6 {
+    text-transform: uppercase;
+    color: #878a99;
+    font-size: 13px;
+}
+
+#cardOne {
+    border-bottom: 4px solid hsla(0, 97%, 59%, 0.5);
+}
+
+#cardOne:hover {
+    border-bottom: 4px solid red;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+
+}
+
+#cardtwo {
+    border-bottom: 4px solid hsla(240, 95%, 58%, 0.5);
+    ;
+}
+
+#cardtwo:hover {
+    border-bottom: 4px solid blue;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+}
+
+#cardthree {
+    border-bottom: 4px solid hsla(120, 100%, 50%, 0.5);
+}
+
+#cardthree:hover {
+    border-bottom: 4px solid green;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+}
+
+#cardfour {
+    border-bottom: 4px solid hsla(0, 1%, 22%, 0.5);
+}
+
+#cardfour:hover {
+    border-bottom: 4px solid black;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+}
+
+#cardfive {
+    border-bottom: 4px solid hsla(30, 100%, 58%, 0.5);
+}
+
+#cardfive:hover {
+    border-bottom: 4px solid brown;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+}
+
+#cardsix {
+    border-bottom: 4px solid hsla(280, 96%, 61%, 0.5);
+    ;
+}
+
+#cardsix:hover {
+    border-bottom: 4px solid purple;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+}
+
+#cardseven {
+    border-bottom: 4px solid hsla(30, 100%, 49%, 0.5);
+    ;
+    ;
+}
+
+#cardseven:hover {
+    border-bottom: 4px solid orangered;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+}
+
+#cardeight {
+    border-bottom: 4px solid hsla(0, 0%, 50%, 0.5);
+
+}
+
+#cardeight:hover {
+    border-bottom: 4px solid gray;
+    box-shadow: 0 5px 10px rgba(30, 32, 37, .12);
+}
+

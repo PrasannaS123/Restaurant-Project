@@ -1,0 +1,81 @@
+<div style="background-color:#f3f3f9; min-height: 90vh; overflow: auto; ">
+    <div class="container my-3">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalInPayment" style="float: right; box-shadow: none;">Add Payment
+                    </button>
+                </div>
+                <div class="table-responsive  text-center">
+                    <table id="myDataTable" class="display ">
+                        <thead>
+                            <tr>
+                                <th class="text-center">S.No</th>
+                                <th>User Name</th>
+                                <th class="text-center">Plan Type</th>
+                                <th class="text-center">Payment Type </th>
+                                <th class="text-center"> Price</th>
+                                <th class="text-center"> Payment Status</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td>{{ item.SNo }}</td>
+                                <td class="text-start">{{ item.UserName }}</td>
+                                <td>{{ item.plan }}</td>
+                                <td>
+                                    {{item.method}}
+                                </td>
+                                <td>
+                                    {{item.price}}
+                                </td>
+                                <td>
+                                    <span [ngStyle]="{ 'color': item.paid ? '#3CA544' : 'red' }">
+                                        <span class="badge bg-success " *ngIf="item.paid">Paid</span>
+                                        <span class="badge bg-danger" *ngIf="!item.paid">Not Paid</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalInPayment" tabindex="-1" aria-labelledby="exampleModalLabelInMeals">
+    <div class="modal-dialog  modal-dialog-centered" style="z-index: 1100;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Payment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    style="box-shadow: none;" (click)="empty()"></button>
+            </div>
+            <div class="modal-body">
+                <label for="add-Meals" class="form-label">Username</label>
+                <select class="selectpicker mb-3 " name="selectedCuisine" data-live-search="true"
+                    [(ngModel)]="inputValue">
+                    <option value="Select Username.."></option>
+                    <option>Prasanna</option>
+                    <option>Surya</option>
+                    <option>Adhi</option>
+                </select>
+                <label for="plan_type" class="form-label">Plan Type</label>
+                <input type="text" class="form-control mb-3" name="plan_type" id="plan_type" value="Silver"
+                    style="box-shadow: none;" readonly>
+                <label for="price" class="form-label">Price(₹)</label>
+                <input type="text" class="form-control mb-3" name="price" id="price" value="3999"
+                    style="box-shadow: none;" readonly>
+                <label for="payment_type" class="form-label">Payment type</label>
+                <input type="text" class="form-control mb-3" name="plan_type" id="plan_type" value="PrePaid"
+                    style="box-shadow: none;" readonly>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="pay()">Pay</button>
+                <button type="button" class="btn btn-secondary" (click)="empty()" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

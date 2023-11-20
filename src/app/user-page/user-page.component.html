@@ -1,0 +1,79 @@
+<div style="background-color:#f3f3f9; min-height: 90vh; overflow: hidden;">
+    <div class="container my-4">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <a routerLink="adduser" class="btn btn-secondary mx-3 my-4" (click)="onAddUserClick()"  data-bs-target="#exampleModalInPayment"
+                        style="float: right; box-shadow: none; color: white;">Add User
+                    </a>
+                    <a (click)="exportDataToExcel()" class="btn btn-secondary my-4"
+                        style="float: right; box-shadow: none; color: white;">Export
+                    </a>
+
+                </div>
+                <div class="table-responsive  text-center">
+                    <table id="myDataTable" class=" display">
+                        <thead>
+                            <tr>
+                                <th class="text-center">S.No</th>
+                                <th> Name</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center" style="width: 150px;">Address</th>
+                                <th class="text-center">City</th>
+                                <th class="text-center"> Plan Type</th>
+                                <th class="text-center"> Payment Type</th>
+                                <th class="text-center">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td>{{ item.SNo }}</td>
+                                <td class="text-start">{{ item.FirstName }} {{ item.LastName }}</td>
+
+                                <td>{{ item.email }}</td>
+                                <td>
+                                    {{item.address}}
+                                </td>
+                                <td>
+                                    {{item.city}}
+                                </td>
+
+                                <td>
+                                    <code>
+                                        {{ item.plan }}
+                                    </code>
+                                </td>
+                                <td>
+                                    <kbd>
+                                        {{ item.paid ? 'PrePaid' : 'PostPaid' }}
+                                    </kbd>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a class="btn btn-success" routerLink="edituser"  (click)="onEditUserClick()"  
+                                            style="box-shadow: none; color: white;">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </a> &nbsp;
+                                        <a [routerLink]="['viewuser', item.SNo]" class="btn btn-secondary"
+                                            style="box-shadow: none; color: white;"   (click)="viewUserDetails(item)" >
+                                            <i class="fa fa-eye"></i>
+                                        </a> &nbsp;
+                                        <a class="btn btn-danger" style="box-shadow: none; color: white;">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

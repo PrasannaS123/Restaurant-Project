@@ -1,0 +1,216 @@
+<div style="background-color:#f3f3f9; height: 100vh; overflow: auto; ">
+    <div class="container my-4">
+        <div class="card ">
+            <div class="card-header">
+                Add Profile
+            </div>
+            <div class="card-body">
+                <form [formGroup]="UserProfile" >
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="fname" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="fname" name="fname"
+                                        formControlName="fname">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('fname')?.hasError('required') && UserProfile.get('fname')?.touched">
+                                            First Name is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="lname" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lname" name="lname"
+                                        formControlName="lname">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('lname')?.hasError('required') && UserProfile.get('lname')?.touched">
+                                            Last Name is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        formControlName="email">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('email')?.hasError('required') && UserProfile.get('email')?.touched">
+                                            Email is required.
+                                        </span>
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('email')?.hasError('email') && UserProfile.get('email')?.touched">
+                                            Please enter a valid email address.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-12">
+                            <div class="mb-3">
+                                <label for="readOnlyInput" class="form-label">Country Code</label>
+                                <input class="form-control" type="text" value="+91" id="countrycode" name="countrycode"
+                                    aria-label="readonly input example" readonly>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="mb-3">
+                                <div class="input-container  ">
+                                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                                    <input type="number" class="form-control" id="phoneNumber" name="phoneNumber"
+                                        formControlName="phoneNumber">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('phoneNumber')?.hasError('required') && UserProfile.get('phoneNumber')?.touched">
+                                            Phone Number is required.
+                                        </span>
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('phoneNumber')?.hasError('pattern') && UserProfile.get('phoneNumber')?.touched">
+                                            Please enter a valid 10-digit phone number.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="address" name="address"
+                                        formControlName="address">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('address')?.hasError('required') && UserProfile.get('address')?.touched">
+                                            Address is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="city" class="form-label">Country</label>
+                                    <input type="text" class="form-control" id="city" name="city"
+                                        formControlName="country">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('country')?.hasError('required') && UserProfile.get('country')?.touched">
+                                            Country is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="city" name="city"
+                                        formControlName="city">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('city')?.hasError('required') && UserProfile.get('city')?.touched">
+                                            City is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="state" class="form-label"> State</label>
+                                    <select id="inputState" class="form-select" formControlName="selectedstate">
+                                        <option value="" selected>Choose...</option>
+                                        <option>Tamilnadu</option>
+                                        <option>Kerala</option>
+                                        <option>Karnataka</option>
+                                        <option>Mumbai</option>
+                                    </select>
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('selectedstate')?.hasError('required') && UserProfile.get('selectedstate')?.touched">
+                                            State is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="pin" class="form-label">PinCode</label>
+                                    <input type="number" class="form-control" id="pin" name="pin" formControlName="zip">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('zip')?.hasError('required') && UserProfile.get('zip')?.touched">
+                                            Pin is required.
+                                        </span>
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('zip')?.hasError('pattern') && UserProfile.get('zip')?.touched">
+                                            Please enter a 6-digit Pin code.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="subscription" class="form-label">Plan Type</label>
+                                    <select id="subs_Plan" name="subs_Plan" class="form-select"
+                                        formControlName="selectedsubs">
+                                        <option value="" selected>Choose...</option>
+                                        <option value="3 months">3 months</option>
+                                        <option value="6 months">6 months</option>
+                                        <option value="9 months">9 months</option>
+                                    </select>
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('selectedsubs')?.hasError('required') && UserProfile.get('selectedsubs')?.touched">
+                                            Plan Type is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
+                                    <label for="payment" class="form-label">Payment Type</label>
+                                    <select id="payment_type" name="payment_type" class="form-select"
+                                        formControlName="selectedpay">
+                                        <option value="" selected>Choose...</option>
+                                        <option>Pre-Paid</option>
+                                        <option>Post-Paid</option>
+                                    </select>
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('selectedpay')?.hasError('required') && UserProfile.get('selectedpay')?.touched">
+                                            Payment Type is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-3 text-end">
+                            <a class=" btn btn-success px-4 py-2">Add</a> &nbsp;
+                            <!-- <a (click)="navigateToParent()" style="color: white;" class="btn btn-secondary">Go to User Profile</a> -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

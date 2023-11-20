@@ -1,0 +1,119 @@
+<div style="background-color:#f3f3f9; min-height: 90vh; overflow: hidden; ">
+    <div class="container my-4">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalInReports" style="float: right; box-shadow: none;">Generate
+                        Report</button>
+                </div>
+
+                <div class="modal fade" id="exampleModalInReports" tabindex="-1"
+                    aria-labelledby="exampleModalLabelInCuisines">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Report</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    style="box-shadow: none;" (click)="empty()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="username" class="form-label ">Username</label>
+                                <div class="search_select_box">
+                                    <select name="ddlCountry" id="Select1" class="selectpicker  mb-3"
+                                        data-live-search-style="begins" data-live-search="true">
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Austria">Austria</option>
+                                        <option value="Belgium">Belgium</option>
+                                        <option value="Brazil">Brazil</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Denmark">Denmark</option>
+                                        <option value="Finland">Finland</option>
+                                        <option value="France">France</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="Ireland">Ireland</option>
+                                        <option value="Italy">Italy</option>
+                                        <option value="Mexico">Mexico</option>
+                                        <option value="Norway">Norway</option>
+                                        <option value="Poland">Poland</option>
+                                        <option value="Portugal">Portugal</option>
+                                        <option value="Spain">Spain</option>
+                                        <option value="Sweden">Sweden</option>
+                                        <option value="Switzerland">Switzerland</option>
+                                        <option value="UK">UK</option>
+                                        <option value="USA">USA</option>
+                                        <option value="Venezuela">Venezuela</option>
+                                    </select>
+                                </div>
+
+                                <label for="date" class="form-label">Date</label>
+
+
+                                <label for="payment_Type" class="form-label">Payment Type</label>
+                                <select name="payment_Type" id="payment_Type" class="form-select mb-3">
+                                    <option selected value="Choose..">Choose..</option>
+                                    <option value="Prepaid">Prepaid</option>
+                                    <option value="PostPaid">PostPaid</option>
+                                </select>
+                                <label for="payment_status" class="form-label">Payment Status</label>
+                                <select name="payment_status" id="payment_status" class="form-select mb-3">
+                                    <option selected value="Choose..">Choose..</option>
+                                    <option value="Paid">Paid</option>
+                                    <option value="Not Paid">Not Paid</option>
+                                </select>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                    (click)="empty()">Generate</button>
+                                <button type="button" class="btn btn-secondary" (click)="empty()"
+                                    data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive text-center">
+                    <table id="myDataTable" class="display ">
+                        <thead>
+                            <tr>
+                                <th class="text-center">S.No</th>
+                                <th>Report Type</th>
+                                <th class="text-center">Report Name</th>
+                                <th class="text-center">Size</th>
+                                <th class="text-center">Generated At</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td>{{ item.SNo }}</td>
+                                <td class="text-start">{{ item.reporttype }}</td>
+                                <td>{{ item.reportname }}</td>
+                                <td>{{ item.size }}</td>
+                                <td>{{ item.generatedat }}</td>
+
+                                <td>
+                                    <button class="btn btn-success" data-bs-toggle="modal" style="box-shadow: none;"
+                                        (click)="exportDataToExcel()">
+                                        <i class="fa-solid fa-download"></i>
+                                    </button> &nbsp;
+                                    <button class="btn btn-danger" style="box-shadow: none;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script>
+    $(document).ready(function() {
+        $('.search_select_box select').selectpicker();
+    })
+</script> -->
