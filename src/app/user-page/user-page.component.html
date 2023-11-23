@@ -3,7 +3,8 @@
         <div class="card">
             <div class="card-body">
                 <div>
-                    <a routerLink="adduser" class="btn btn-secondary mx-3 my-4" (click)="onAddUserClick()"  data-bs-target="#exampleModalInPayment"
+                    <a routerLink="adduser" class="btn btn-secondary mx-3 my-4" (click)="onAddUserClick()"
+                        data-bs-target="#exampleModalInPayment"
                         style="float: right; box-shadow: none; color: white;">Add User
                     </a>
                     <a (click)="exportDataToExcel()" class="btn btn-secondary my-4"
@@ -17,6 +18,7 @@
                             <tr>
                                 <th class="text-center">S.No</th>
                                 <th> Name</th>
+                                <th> Image</th>
                                 <th class="text-center">Email</th>
                                 <th class="text-center" style="width: 150px;">Address</th>
                                 <th class="text-center">City</th>
@@ -30,6 +32,9 @@
                             <tr *ngFor="let item of data">
                                 <td>{{ item.SNo }}</td>
                                 <td class="text-start">{{ item.FirstName }} {{ item.LastName }}</td>
+                                <td class="text-start">
+                                    <img [src]="item.image" alt="User Image"class="user-image">
+                                </td>
 
                                 <td>{{ item.email }}</td>
                                 <td>
@@ -51,12 +56,12 @@
                                 </td>
                                 <td>
                                     <div>
-                                        <a class="btn btn-success" routerLink="edituser"  (click)="onEditUserClick()"  
+                                        <a class="btn btn-success" routerLink="edituser" (click)="onEditUserClick()"
                                             style="box-shadow: none; color: white;">
                                             <i class="fa-regular fa-pen-to-square"></i>
                                         </a> &nbsp;
                                         <a [routerLink]="['viewuser', item.SNo]" class="btn btn-secondary"
-                                            style="box-shadow: none; color: white;"   (click)="viewUserDetails(item)" >
+                                            style="box-shadow: none; color: white;" (click)="viewUserDetails(item)">
                                             <i class="fa fa-eye"></i>
                                         </a> &nbsp;
                                         <a class="btn btn-danger" style="box-shadow: none; color: white;">

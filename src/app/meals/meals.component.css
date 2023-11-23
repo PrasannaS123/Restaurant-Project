@@ -132,4 +132,10 @@
     display: none;
 
 }
-
+::ng-deep.btn.dropdown-toggle.btn-default {
+    display: none !important;
+}
+::ng-deep.btn.dropdown-toggle.btn-light {
+    border: 1px solid #dee2e6;
+    background-color: transparent;
+}

@@ -2,84 +2,68 @@
     <div class="container my-3">
         <div *ngIf="selectedUserData">
             <div class="card">
-                <div class="card-header">
-                    User details
-                </div>
                 <div class="card-body">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item"><strong>S.No:</strong> {{ selectedUserData?.SNo }}</li>
-                        <li class="list-group-item"><strong>Name:</strong> {{ selectedUserData?.FirstName }} {{
-                            selectedUserData?.LastName }}</li>
-                        <li class="list-group-item"><strong>Email:</strong> {{ selectedUserData?.email }}</li>
-                        <li class="list-group-item"><strong>Address:</strong> {{ selectedUserData?.address }}</li>
-                        <li class="list-group-item"><strong>City:</strong> {{ selectedUserData?.city }}</li>
-                        <li class="list-group-item"><strong>Plan Type:</strong> {{ selectedUserData?.plan }}</li>
-                        <li class="list-group-item"><strong>Payment Type:</strong> {{ selectedUserData?.paid ? 'PrePaid'
-                            :
-                            'PostPaid' }}</li>
-                    </ul> -->
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0 fw-semibold">Full Name</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">{{ selectedUserData?.FirstName }} {{
-                                    selectedUserData?.LastName }}</p>
+                    <div class="row my-3 mx-1">
+                        <div class="col-lg-3 col-md-12 col-12  ">
+                            <div class="profile_card card text-center" style="cursor: pointer;">
+                                <h5 class="card-title font-semibold my-3">Profile</h5>
+                                <img [src]="selectedUserData?.image" class="img-thumbnail mt-3 mb-4 rounded-circle mx-auto"
+                                    style="max-width: 150px ; height: 150px ;  object-fit: cover;">
+                                <div class="mb-3" style="line-height: 1.2;">
+                                    <span style="font-size: 18px; font-weight: 700 ; ">{{ selectedUserData?.FirstName }}
+                                        {{
+                                        selectedUserData?.LastName }} </span>
                                 </div>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0 fw-semibold">Email</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">{{ selectedUserData?.email }}</p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0 fw-semibold">Address</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">{{ selectedUserData?.address }}</p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0 fw-semibold">City</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">{{ selectedUserData?.city }}</p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0 fw-semibold">Plan</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">{{ selectedUserData?.plan }}</p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p class="mb-0 fw-semibold">Payment Type</p>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p class="text-muted mb-0">{{ selectedUserData?.paid ? 'PrePaid':'PostPaid' }}</p>
+                        </div>
+                        <div class="col-lg-9 col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form action="#">
+                                        <div class="row">
+                                            <h5 class="card-title mb-4 fw-bold">User Details</h5>
+                                            <div class="col-lg-6 col-12">
+                                                <label for="email" class="form-label">Email</label>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item mb-3">{{ selectedUserData?.email }}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label for="address" class="form-label">Address</label>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item mb-3">{{ selectedUserData?.address }}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class=" col-lg-6 col-12">
+                                                <label for="city" class="form-label">City</label>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item mb-3">{{ selectedUserData?.city }}</li>
+                                                </ul>
+                                            </div>
+                                            <div class=" col-lg-6 col-12">
+                                                <label for="plan" class="form-label">Plan</label>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item mb-3">{{ selectedUserData?.plan }}</li>
+                                                </ul>
+
+                                            </div>
+                                            <div class=" col-lg-6 col-12">
+                                                <label for="address" class="form-label">Payment Type</label>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item mb-3">{{ selectedUserData?.paid ?
+                                                        'PrePaid':'PostPaid' }}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class=" mx-3 mb-3">
-                    <button class="btn btn-secondary" (click)="navigateToParent()">Go to User Profile</button>
-                </div> -->
             </div>
         </div>
 

@@ -16,18 +16,17 @@ export class UserPageComponent {
 
 
 
-  
   onAddUserClick() {
+
     this.headingservice.setShowAddUserBreadcrumb(true);
     this.headingservice.setShowEditUserBreadcrumb(false);
-   
+
     this.router.navigate(['/user/adduser']);
   }
 
   onEditUserClick() {
     this.headingservice.setShowEditUserBreadcrumb(true);
     this.headingservice.setShowAddUserBreadcrumb(false);
-   
     this.router.navigate(['/user/edituser']);
   }
 
@@ -49,12 +48,14 @@ export class UserPageComponent {
 
   public data = [
     {
-      SNo: '1', FirstName: 'Prasanna', LastName: 'Siva', email: 'prasanna@gmail.com', address: '123, 2nd Floor, Narayan Dhuru Street', city: 'Mumbai', plan: '3 months', paid: true
+      SNo: '1', FirstName: 'Prasanna', image: 'https://www.alucoildesign.com/assets/pages/media/profile/profile_user.jpg', LastName: 'Siva', email: 'prasanna@gmail.com', address: '123, 2nd Floor, Narayan Dhuru Street', city: 'Mumbai', plan: '3 months', paid: true
     },
-    { SNo: '2', FirstName: 'Surya', LastName: 'Krishnan', email: 'surya@gmail.com', address: '117, Opp To Mtr Hotel, Lalbagh Main Road', city: 'Bangalore', plan: '6 months', paid: false },
+    {
+      SNo: '2', FirstName: 'Surya', image: 'https://www.alucoildesign.com/assets/pages/media/profile/profile-img.png', LastName: 'Krishnan', email: 'surya@gmail.com', address: '117, Opp To Mtr Hotel, Lalbagh Main Road', city: 'Bangalore', plan: '6 months', paid: false
+    },
 
     {
-      SNo: '3', FirstName: 'Adhi', LastName: 'Ram', email: 'adhi@gmail.com', address: ' 401, Diwan Chambers, Behind High Court,',
+      SNo: '3', FirstName: 'Adhi', image: 'https://t3.ftcdn.net/jpg/04/23/59/74/360_F_423597477_AKCjGMtevfCi9XJG0M8jter97kG466y7.jpg', LastName: 'Ram', email: 'adhi@gmail.com', address: ' 401, Diwan Chambers, Behind High Court,',
       city: 'Ahmedabad', plan: '9 months', paid: true
     },
 
@@ -82,7 +83,7 @@ export class UserPageComponent {
 
 
   }
-  
+
 
 
 }

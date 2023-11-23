@@ -11,7 +11,7 @@ import { HeadingService } from '../shared/heading.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+  
   
   private breakpointObserver = inject(BreakpointObserver);
 

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
 
@@ -14,6 +14,8 @@ export class CuisinesComponent implements AfterViewInit {
 
   inputValue: string = '';
   data: any[] = [];
+
+ 
 
   empty(): void {
 
@@ -31,25 +33,26 @@ export class CuisinesComponent implements AfterViewInit {
         lengthMenu: [5, 10, 25, 50],
         processing: true,
       });
-
     });
+
+   
   }
   ngOnInit() {
     this.data = [
-      { SNo: '1', cuisineName: 'Indian', createdAt: '31/07/2021', active: '', action: '' },
-      { SNo: '2', cuisineName: 'Chinese', createdAt: '10/10/2022', active: '', action: '' },
-      { SNo: '3', cuisineName: 'Italian', createdAt: '09/05/2019', active: '', action: '' },
-      { SNo: '4', cuisineName: 'Thai', createdAt: '28/02/2021', active: '', action: '' },
-      { SNo: '5', cuisineName: 'Japanese', createdAt: '18/07/2023', active: '', action: '' },
-      { SNo: '6', cuisineName: 'French', createdAt: '11/12/2020', active: '', action: '' },
-      { SNo: '7', cuisineName: 'Mexican', createdAt: '30/08/2017', active: '', action: '' },
-      { SNo: '8', cuisineName: 'American', createdAt: '07/01/2015', active: '', action: '' },
-      { SNo: '9', cuisineName: 'Korean', createdAt: '17/05/2022', active: '', action: '' },
-      { SNo: '10', cuisineName: 'German', createdAt: '16/04/2022', active: '', action: '' },
+      { SNo: '1', cuisineName: 'Punjabi Cuisine', createdAt: '31/07/2021', active: '', action: '' },
+      { SNo: '2', cuisineName: 'Rajasthani Cuisine', createdAt: '10/10/2022', active: '', action: '' },
+      { SNo: '3', cuisineName: 'Bengali Cuisine', createdAt: '09/05/2019', active: '', action: '' },
+      { SNo: '4', cuisineName: 'North Indian Cuisine', createdAt: '28/02/2021', active: '', action: '' },
+      { SNo: '5', cuisineName: 'Sichuan', createdAt: '18/07/2023', active: '', action: '' },
+      { SNo: '6', cuisineName: 'Shandong', createdAt: '11/12/2020', active: '', action: '' },
+      { SNo: '7', cuisineName: 'Cantonese', createdAt: '30/08/2017', active: '', action: '' },
+      { SNo: '8', cuisineName: 'Cajun cuisine', createdAt: '07/01/2015', active: '', action: '' },
+      { SNo: '9', cuisineName: 'Floribbean cuisine', createdAt: '17/05/2022', active: '', action: '' },
+      { SNo: '10', cuisineName: 'Tex-Mex cuisine', createdAt: '16/04/2022', active: '', action: '' },
 
     ];
   }
-  constructor(private toastr: ToastrService) { }
+  constructor(private toastr: ToastrService, private renderer: Renderer2) { }
 
   add() {
     console.log(this.inputValue);

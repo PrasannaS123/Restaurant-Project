@@ -20,35 +20,25 @@
                             <div class="modal-body">
                                 <label for="username" class="form-label ">Username</label>
                                 <div class="search_select_box">
-                                    <select name="ddlCountry" id="Select1" class="selectpicker  mb-3"
+                                    <select name="ddlCountry" id="Select1" class="selectpicker w-100 mb-2 " autocomplete="off"
                                         data-live-search-style="begins" data-live-search="true">
-                                        <option value="Argentina">Argentina</option>
-                                        <option value="Austria">Austria</option>
-                                        <option value="Belgium">Belgium</option>
-                                        <option value="Brazil">Brazil</option>
-                                        <option value="Canada">Canada</option>
-                                        <option value="Denmark">Denmark</option>
-                                        <option value="Finland">Finland</option>
-                                        <option value="France">France</option>
-                                        <option value="Germany">Germany</option>
-                                        <option value="Ireland">Ireland</option>
-                                        <option value="Italy">Italy</option>
-                                        <option value="Mexico">Mexico</option>
-                                        <option value="Norway">Norway</option>
-                                        <option value="Poland">Poland</option>
-                                        <option value="Portugal">Portugal</option>
-                                        <option value="Spain">Spain</option>
-                                        <option value="Sweden">Sweden</option>
-                                        <option value="Switzerland">Switzerland</option>
-                                        <option value="UK">UK</option>
-                                        <option value="USA">USA</option>
-                                        <option value="Venezuela">Venezuela</option>
+                                        <option value="Username.." selected>Username..</option>
+                                        <option value="Prasanna">Prasanna</option>
+                                        <option value="Adhi">Adhi</option>
+                                        <option value="Surya">Surya</option>
+                                        <option value="Pravin">Pravin</option>
+                                        <option value="Santhosh">Santhosh</option>
                                     </select>
                                 </div>
-
                                 <label for="date" class="form-label">Date</label>
-
-
+                                <mat-form-field class="w-100">
+                                    <mat-date-range-input [rangePicker]="picker">
+                                        <input matStartDate placeholder="Start date">
+                                        <input matEndDate placeholder="End date">
+                                    </mat-date-range-input>
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-date-range-picker #picker></mat-date-range-picker>
+                                </mat-form-field>
                                 <label for="payment_Type" class="form-label">Payment Type</label>
                                 <select name="payment_Type" id="payment_Type" class="form-select mb-3">
                                     <option selected value="Choose..">Choose..</option>
@@ -61,8 +51,6 @@
                                     <option value="Paid">Paid</option>
                                     <option value="Not Paid">Not Paid</option>
                                 </select>
-
-
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-success" data-bs-dismiss="modal"
@@ -78,7 +66,6 @@
                         <thead>
                             <tr>
                                 <th class="text-center">S.No</th>
-                                <th>Report Type</th>
                                 <th class="text-center">Report Name</th>
                                 <th class="text-center">Size</th>
                                 <th class="text-center">Generated At</th>
@@ -88,7 +75,6 @@
                         <tbody>
                             <tr *ngFor="let item of data">
                                 <td>{{ item.SNo }}</td>
-                                <td class="text-start">{{ item.reporttype }}</td>
                                 <td>{{ item.reportname }}</td>
                                 <td>{{ item.size }}</td>
                                 <td>{{ item.generatedat }}</td>
@@ -111,9 +97,3 @@
         </div>
     </div>
 </div>
-
-<!-- <script>
-    $(document).ready(function() {
-        $('.search_select_box select').selectpicker();
-    })
-</script> -->

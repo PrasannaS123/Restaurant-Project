@@ -129,3 +129,13 @@
 ::ng-deep.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
     width: 460px !important;
 }
+
+::ng-deep #myDataTable_first {
+    display: none;
+
+}
+
+::ng-deep #myDataTable_last {
+    display: none;
+
+}

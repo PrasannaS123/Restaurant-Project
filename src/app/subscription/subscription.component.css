@@ -120,3 +120,12 @@
     --mdc-switch-selected-pressed-track-color: green;
     --mdc-switch-selected-track-color: green;
 }
+::ng-deep #myDataTable_first {
+    display: none;
+
+}
+
+::ng-deep #myDataTable_last {
+    display: none;
+
+}

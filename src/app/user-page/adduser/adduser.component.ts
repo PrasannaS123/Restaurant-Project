@@ -20,6 +20,7 @@ export class AdduserComponent {
       'fname': new FormControl(null, [Validators.required]),
       'lname': new FormControl(null, [Validators.required]),
       'email': new FormControl(null, [Validators.required, Validators.email],),
+      'image': new FormControl(null, [Validators.required, this.imageFileTypeValidator(['png', 'jpg'])]),
       'countrycode': new FormControl(null, [Validators.required]),
       'phoneNumber': new FormControl(null, [Validators.required, Validators.pattern(/^\d{10}$/)]),
       'address': new FormControl(null, Validators.required),
@@ -35,11 +36,18 @@ export class AdduserComponent {
     });
    
   }
+  imageFileTypeValidator(allowedTypes: string[]) {
+    return (control: FormControl): { [key: string]: any } | null => {
+      if (!control.value) {
+        return null;
+      }
+      const fileExtension = control.value.split('.').pop().toLowerCase();
+      if (allowedTypes.indexOf(fileExtension) === -1) {
+        return { 'imageType': true };
+      }
 
-  constructor(private router: Router) { }
-  
-
-  navigateToParent() {
-    this.router.navigate(['/user']);
+      return null;
+    };
   }
+  
 }

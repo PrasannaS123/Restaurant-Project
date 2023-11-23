@@ -30,8 +30,8 @@ export class ReportsComponent {
     $(() => {
 
       $('#exampleModalInReports').appendTo('body');
-   
-      
+
+      $('.selectpicker').selectpicker();
 
       $('#myDataTable').DataTable({
         pagingType: 'full_numbers',
@@ -39,7 +39,12 @@ export class ReportsComponent {
         lengthMenu: [5, 10, 25, 50],
         processing: true,
       });
+      document.addEventListener("DOMContentLoaded", function () {
+
+        $('.search_select_box select').selectpicker();
+      });
       
+     
     });
   }
 
@@ -48,29 +53,26 @@ export class ReportsComponent {
 
 
     this.data = [
-      { SNo: '1', reporttype: 'Report Type 1', reportname: 'Report Name 1', size: '5 MB', generatedat: '31/09/2022', action: '' },
-      { SNo: '2', reporttype: 'Report Type 2', reportname: 'Report Name 2', size: '8 MB', generatedat: '14/10/2020', action: '' },
-      { SNo: '3', reporttype: 'Report Type 3', reportname: 'Report Name 3', size: '2 MB', generatedat: '08/01/2023', action: '' },
-      { SNo: '4', reporttype: 'Report Type 4', reportname: 'Report Name 4', size: '13 MB', generatedat: '27/05/2019', action: '' },
-      { SNo: '5', reporttype: 'Report Type 5', reportname: 'Report Name 5', size: '6 MB', generatedat: '02/06/2023', action: '' },
+      { SNo: '1', reportname: 'Report Name 1', size: '5 MB', generatedat: '31/09/2022', action: '' },
+      { SNo: '2', reportname: 'Report Name 2', size: '8 MB', generatedat: '14/10/2020', action: '' },
+      { SNo: '3', reportname: 'Report Name 3', size: '2 MB', generatedat: '08/01/2023', action: '' },
+      { SNo: '4', reportname: 'Report Name 4', size: '13 MB', generatedat: '27/05/2019', action: '' },
+      { SNo: '5', reportname: 'Report Name 5', size: '6 MB', generatedat: '02/06/2023', action: '' },
 
 
     ];
 
- 
-}
 
-exportDataToExcel() {
-  const fileName = 'user_data';
-  const sheetName = 'Users';
+  }
 
-  exportToExcel(this.data, fileName, sheetName);
-}
+  exportDataToExcel() {
+    const fileName = 'user_data';
+    const sheetName = 'Users';
 
-  dateRange = new FormGroup({
-    start: new FormControl(),
-    end: new FormControl()
-  });
+    exportToExcel(this.data, fileName, sheetName);
+  }
+
+
 }
 
 

@@ -45,7 +45,7 @@ export class UserPaymentComponent {
   }
   public data = [
     { SNo: '1', UserName: 'Prasanna', plan: 'Silver',price:'Rs.3999', method: 'Prepaid', paid: true },
-    { SNo: '2', UserName: 'Surya', plan: 'Platinum', price: 'RS.6999', method: 'PostPaid', paid: false },
+    { SNo: '2', UserName: 'Surya', plan: 'Platinum', price: 'RS.6999', method: 'PostPaid', paid: true },
     { SNo: '3', UserName: 'Adhi', plan: 'Gold', price: 'Rs.9999', method: 'Prepaid', paid: true },
 
 

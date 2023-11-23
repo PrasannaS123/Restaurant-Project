@@ -122,3 +122,13 @@
     padding: 5px 10px;
     color: white;
 }
+
+::ng-deep #myDataTable_first {
+    display: none;
+
+}
+
+::ng-deep #myDataTable_last {
+    display: none;
+
+}

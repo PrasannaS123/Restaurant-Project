@@ -42,7 +42,6 @@
                     </table>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -54,31 +53,36 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                     style="box-shadow: none;" (click)="empty()"></button>
             </div>
-            <div class="modal-body">
-                <label for="add-Meals" class="form-label">Cuisine Type</label>
-                <select class="selectpicker mb-3"  data-live-search="true">
-                    <option value="Select the Cuisine type..">Select the Cuisine type..</option>
-                    <option>Indian</option>
-                    <option>Chinese</option>
-                    <option>Italian</option>
-                    <option>Thai</option>
-                    <option>Japanese</option>
-                    <option>French</option>
-                    <option>Mexican</option>
-                    <option>American</option>
-                    <option>Korean</option>
-                    <option>German</option>
-                </select>
+            <form #myForm="ngForm">
+                <div class="modal-body">
+                    <label for="add-Meals" class="form-label">Cuisine Name</label>
+                    <div class="search_select_box1">
+                        <select  class="selectpicker mb-2" data-live-search="true" autocomplete="off">
+                            <option  value="default" selected="selected">Select the Cuisine Name..</option>
+                            <option value="Punjabi Cuisine">Punjabi Cuisine</option>
+                            <option value="Rajasthani Cuisine">Rajasthani Cuisine</option>
+                            <option value="Bengali Cuisine">Bengali Cuisine</option>
+                            <option value="North Indian Cuisine">North Indian Cuisine</option>
+                            <option value="Sichuan">Sichuan</option>
+                            <option value="Shandong">Shandong</option>
+                            <option value="Cantonese">Cantonese</option>
+                            <option value="Cajun cuisine">Cajun cuisine</option>
+                            <option value="Floribbean cuisine">Floribbean cuisine</option>
+                            <option value="Tex-Mex cuisine">Tex-Mex cuisine</option>
+                        </select>
+                    </div>
 
-                <label for="add-Meals" class="form-label">Meal Name</label>
-                <input type="text" class="form-control" name="meals" id="meals" style="box-shadow: none;"
-                    [(ngModel)]="inputValue">
+                    <label for="add-Meals" class="form-label">Meal Name</label>
+                    <input type="text" class="form-control" name="meals" id="meals" style="box-shadow: none;"
+                        [(ngModel)]="inputValue">
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="add()">Add</button>
-                <button type="button" class="btn btn-secondary" (click)="empty()" data-bs-dismiss="modal">Close</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="add() ">Add</button>
+                    <button type="button" class="btn btn-secondary" (click)="empty()"
+                        data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -91,7 +95,24 @@
                     style="box-shadow: none;" (click)="empty()"></button>
             </div>
             <div class="modal-body">
-                <label for="add-cuisines" class="form-label">Cuisine Name</label>
+                <label for="add-Meals" class="form-label"> Cuisine Name</label>
+                <div class="search_select_box1">
+                    <select class="selectpicker mb-2" data-live-search="true">
+                        <option value="Select the Cuisine Name..">Select the Cuisine Name..</option>
+                        <option>Punjabi Cuisine</option>
+                        <option>Rajasthani Cuisine</option>
+                        <option>Bengali Cuisine</option>
+                        <option>North Indian Cuisine</option>
+                        <option>Sichuan</option>
+                        <option>Shandong</option>
+                        <option>Cantonese</option>
+                        <option>Cajun cuisine</option>
+                        <option>Floribbean cuisine</option>
+                        <option>Tex-Mex cuisine</option>
+                    </select>
+                </div>
+
+                <label for="add-cuisines" class="form-label"> Meal Name</label>
                 <input type="text" class="form-control" name="cuisines" id="cuisines" style="box-shadow: none;"
                     [(ngModel)]="inputValue">
             </div>

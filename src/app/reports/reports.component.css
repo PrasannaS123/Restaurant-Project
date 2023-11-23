@@ -132,3 +132,35 @@
 
 }
 
+::ng-deep.btn.dropdown-toggle.btn-default {
+    display: none !important;
+}
+
+::ng-deep.btn.dropdown-toggle.btn-light {
+    border: 1px solid #dee2e6;
+    background-color: transparent;
+}
+
+::ng-deep.cdk-overlay-container {
+    z-index: 2050 !important;
+}
+
+::ng-deep.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent !important;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    height: 50px !important;
+    
+}
+
+::ng-deep.mdc-line-ripple.ng-tns-c1205077789-2.ng-star-inserted{
+    display: none;
+    border-bottom: 1px solid #dee2e6;
+  
+}
+::ng-deep.mat-mdc-text-field-wrapper {
+    height: 50px !important;
+}
+::ng-deep.mat-calendar-table-header{
+    background-color: transparent !important;
+}

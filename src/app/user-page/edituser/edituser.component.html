@@ -40,6 +40,25 @@
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="mb-3">
                                 <div class="input-container">
+                                    <label for="imageUpload" class="form-label">Choose Image</label>
+                                    <input type="file" class="form-control" id="imageUpload" accept="image/*"
+                                        formControlName="image">
+                                    <div class="error-container">
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('image')?.hasError('required') && UserProfile.get('image')?.touched">
+                                            Image is required
+                                        </span>
+                                        <span class="error-text"
+                                            *ngIf="UserProfile.get('image')?.hasError('imageType') && UserProfile.get('image')?.touched">
+                                            Please choose only PNG or JPG image
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="mb-3">
+                                <div class="input-container">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" name="email"
                                         formControlName="email">
@@ -82,7 +101,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-12">
+                        <div class="col-lg-4 col-md-6 col-12">
                             <div class="mb-3">
                                 <div class="input-container">
                                     <label for="address" class="form-label">Address</label>
@@ -127,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="mb-3">
                                 <div class="input-container">
                                     <label for="state" class="form-label"> State</label>
@@ -147,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="mb-3">
                                 <div class="input-container">
                                     <label for="pin" class="form-label">PinCode</label>
@@ -165,7 +184,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="mb-3">
                                 <div class="input-container">
                                     <label for="subscription" class="form-label">Plan Type</label>
@@ -185,7 +204,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-3 col-md-6 col-12">
                             <div class="mb-3">
                                 <div class="input-container">
                                     <label for="payment" class="form-label">Payment Type</label>
@@ -205,7 +224,8 @@
                             </div>
                         </div>
                         <div class="mt-2 mb-3 text-end">
-                            <a  class="btn btn-success text-light  px-4 py-2">Edit</a>&nbsp;
+                            <a class="btn btn-success text-light  px-4 py-2">Edit</a>&nbsp;
+                            <a class="btn btn-danger text-light  px-4 py-2">Cancel</a>
                             <!-- <a (click)="navigateToParent()" style="color: white;" class="btn btn-secondary">Go to User Profile</a> -->
                         </div>
                     </div>
@@ -214,4 +234,3 @@
         </div>
     </div>
 </div>
-
