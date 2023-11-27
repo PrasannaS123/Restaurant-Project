@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <div>
-                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
+                    <button class="btn bg-danger-subtle  mx-3 my-4" data-bs-toggle="modal"
                         data-bs-target="#exampleModalInMeals" style="float: right; box-shadow: none;">Add
                         Meals</button>
                 </div>
@@ -56,9 +56,10 @@
             <form #myForm="ngForm">
                 <div class="modal-body">
                     <label for="add-Meals" class="form-label">Cuisine Name</label>
-                    <div class="search_select_box1">
-                        <select  class="selectpicker mb-2" data-live-search="true" autocomplete="off">
-                            <option  value="default" selected="selected">Select the Cuisine Name..</option>
+                    <div class="search_select_box">
+                        <select name="ddlCountry" id="Select1" class="selectpicker w-100 mb-2 " autocomplete="off"
+                            data-live-search-style="begins" data-live-search="true">
+                            <option value="default" selected="selected">Select the Cuisine Name..</option>
                             <option value="Punjabi Cuisine">Punjabi Cuisine</option>
                             <option value="Rajasthani Cuisine">Rajasthani Cuisine</option>
                             <option value="Bengali Cuisine">Bengali Cuisine</option>
@@ -71,16 +72,15 @@
                             <option value="Tex-Mex cuisine">Tex-Mex cuisine</option>
                         </select>
                     </div>
-
                     <label for="add-Meals" class="form-label">Meal Name</label>
                     <input type="text" class="form-control" name="meals" id="meals" style="box-shadow: none;"
                         [(ngModel)]="inputValue">
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="add() ">Add</button>
                     <button type="button" class="btn btn-secondary" (click)="empty()"
                         data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="add() ">Add</button>
                 </div>
             </form>
         </div>
@@ -117,8 +117,8 @@
                     [(ngModel)]="inputValue">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="edit()">Edit</button>
                 <button type="button" class="btn btn-secondary" (click)="empty()" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="edit()">Edit</button>
             </div>
         </div>
     </div>

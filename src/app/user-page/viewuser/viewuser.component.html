@@ -7,7 +7,8 @@
                         <div class="col-lg-3 col-md-12 col-12  ">
                             <div class="profile_card card text-center" style="cursor: pointer;">
                                 <h5 class="card-title font-semibold my-3">Profile</h5>
-                                <img [src]="selectedUserData?.image" class="img-thumbnail mt-3 mb-4 rounded-circle mx-auto"
+                                <img [src]="selectedUserData?.image"
+                                    class="img-thumbnail mt-3 mb-4 rounded-circle mx-auto"
                                     style="max-width: 150px ; height: 150px ;  object-fit: cover;">
                                 <div class="mb-3" style="line-height: 1.2;">
                                     <span style="font-size: 18px; font-weight: 700 ; ">{{ selectedUserData?.FirstName }}
@@ -22,39 +23,14 @@
                                     <form action="#">
                                         <div class="row">
                                             <h5 class="card-title mb-4 fw-bold">User Details</h5>
-                                            <div class="col-lg-6 col-12">
-                                                <label for="email" class="form-label">Email</label>
-                                                <ul class="list-group">
-                                                    <li class="list-group-item mb-3">{{ selectedUserData?.email }}</li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-6 col-12">
-                                                <label for="address" class="form-label">Address</label>
-                                                <ul class="list-group">
-                                                    <li class="list-group-item mb-3">{{ selectedUserData?.address }}
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class=" col-lg-6 col-12">
-                                                <label for="city" class="form-label">City</label>
-                                                <ul class="list-group">
-                                                    <li class="list-group-item mb-3">{{ selectedUserData?.city }}</li>
-                                                </ul>
-                                            </div>
-                                            <div class=" col-lg-6 col-12">
-                                                <label for="plan" class="form-label">Plan</label>
-                                                <ul class="list-group">
-                                                    <li class="list-group-item mb-3">{{ selectedUserData?.plan }}</li>
-                                                </ul>
 
-                                            </div>
-                                            <div class=" col-lg-6 col-12">
-                                                <label for="address" class="form-label">Payment Type</label>
-                                                <ul class="list-group">
-                                                    <li class="list-group-item mb-3">{{ selectedUserData?.paid ?
-                                                        'PrePaid':'PostPaid' }}</li>
-                                                </ul>
-                                            </div>
+                                            <p>Email: {{ selectedUserData?.email }}</p>
+                                            <p>Address: {{ selectedUserData?.address }}</p>
+                                            <p>City: {{ selectedUserData?.city }}</p>
+                                            <p>Plan: {{ selectedUserData?.plan }}</p>
+                                            <p>Payment Type: {{ selectedUserData?.paid ?
+                                                'PrePaid':'PostPaid' }}</p>
+
                                         </div>
                                     </form>
 

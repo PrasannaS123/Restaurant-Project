@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <div>
-                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
+                    <button class="btn bg-danger-subtle  mx-3 my-4" data-bs-toggle="modal"
                         data-bs-target="#exampleModalInReports" style="float: right; box-shadow: none;">Generate
                         Report</button>
                 </div>
@@ -20,8 +20,8 @@
                             <div class="modal-body">
                                 <label for="username" class="form-label ">Username</label>
                                 <div class="search_select_box">
-                                    <select name="ddlCountry" id="Select1" class="selectpicker w-100 mb-2 " autocomplete="off"
-                                        data-live-search-style="begins" data-live-search="true">
+                                    <select name="ddlCountry" id="Select1" class="selectpicker w-100 mb-2 "
+                                        autocomplete="off" data-live-search-style="begins" data-live-search="true">
                                         <option value="Username.." selected>Username..</option>
                                         <option value="Prasanna">Prasanna</option>
                                         <option value="Adhi">Adhi</option>
@@ -53,10 +53,10 @@
                                 </select>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
-                                    (click)="empty()">Generate</button>
                                 <button type="button" class="btn btn-secondary" (click)="empty()"
                                     data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                    (click)="empty()">Generate</button>
                             </div>
                         </div>
                     </div>

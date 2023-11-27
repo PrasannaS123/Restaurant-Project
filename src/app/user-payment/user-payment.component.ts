@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-
+declare var $: any;
 
 @Component({
   selector: 'app-user-payment',
@@ -28,7 +28,7 @@ export class UserPaymentComponent {
         lengthMenu: [5, 10, 25, 50],
         processing: true
       });
-     
+      $('.selectpicker').selectpicker();
     });
   }
   constructor(private toastr: ToastrService) { }

@@ -39,11 +39,8 @@ export class ReportsComponent {
         lengthMenu: [5, 10, 25, 50],
         processing: true,
       });
-      document.addEventListener("DOMContentLoaded", function () {
-
-        $('.search_select_box select').selectpicker();
-      });
-      
+     
+     
      
     });
   }
@@ -74,6 +71,7 @@ export class ReportsComponent {
 
 
 }
+
 
 
 

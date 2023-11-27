@@ -3,9 +3,9 @@
         <div class="card">
             <div class="card-body">
                 <div>
-                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalInCuisines" style="float: right; box-shadow: none;">Add
-                        Cuisines</button>
+                    <button type="button" class="btn bg-danger-subtle  mx-3 my-4 "
+                        data-bs-toggle="modal" data-bs-target="#exampleModalInCuisines"
+                        style="float: right; box-shadow: none; " >Add Cuisines</button>
                 </div>
                 <div class="modal fade" id="exampleModalInCuisines" tabindex="-1"
                     aria-labelledby="exampleModalLabelInCuisines">
@@ -22,10 +22,10 @@
                                     style="box-shadow: none;" [(ngModel)]="inputValue">
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
-                                    (click)="add()">Add</button>
                                 <button type="button" class="btn btn-secondary" (click)="empty()"
                                     data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                    (click)="add()">Add</button>
                             </div>
                         </div>
                     </div>
@@ -76,10 +76,10 @@
                                     style="box-shadow: none;" [(ngModel)]="inputValue">
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
-                                    (click)="edit()">Edit</button>
                                 <button type="button" class="btn btn-secondary" (click)="empty()"
                                     data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                    (click)="edit()">Edit</button>
                             </div>
                         </div>
                     </div>

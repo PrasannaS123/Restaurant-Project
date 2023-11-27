@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <div>
-                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
+                    <button class="btn bg-danger-subtle mx-3 my-4" data-bs-toggle="modal"
                         data-bs-target="#exampleModalInPayment" style="float: right; box-shadow: none;">Add Payment
                     </button>
                 </div>
@@ -55,13 +55,18 @@
             </div>
             <div class="modal-body">
                 <label for="add-Meals" class="form-label">Username</label>
-                <select class="selectpicker mb-3 " name="selectedCuisine" data-live-search="true"
-                    [(ngModel)]="inputValue">
-                    <option value="Select Username.."></option>
-                    <option>Prasanna</option>
-                    <option>Surya</option>
-                    <option>Adhi</option>
-                </select>
+                <div class="search_select_box">
+                    <select name="ddlCountry" id="Select1" class="selectpicker w-100 mb-2 " autocomplete="off"
+                        data-live-search-style="begins" data-live-search="true">
+                        <option value="Username.." selected>Username..</option>
+                        <option value="Prasanna">Prasanna</option>
+                        <option value="Adhi">Adhi</option>
+                        <option value="Surya">Surya</option>
+                        <option value="Pravin">Pravin</option>
+                        <option value="Santhosh">Santhosh</option>
+                    </select>
+                </div>
+                
                 <label for="plan_type" class="form-label">Plan Type</label>
                 <input type="text" class="form-control mb-3" name="plan_type" id="plan_type" value="Silver"
                     style="box-shadow: none;" readonly>
@@ -73,8 +78,8 @@
                     style="box-shadow: none;" readonly>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="pay()">Pay</button>
                 <button type="button" class="btn btn-secondary" (click)="empty()" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="pay()">Pay</button>
             </div>
         </div>
     </div>

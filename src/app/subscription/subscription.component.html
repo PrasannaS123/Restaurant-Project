@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <div>
-                    <button class="btn btn-secondary mx-3 my-4" data-bs-toggle="modal"
+                    <button class="btn bg-danger-subtle mx-3 my-4" data-bs-toggle="modal"
                         data-bs-target="#exampleModalInSubscrption" style="float: right; box-shadow: none;">Add
                         Subscription</button>
                 </div>
@@ -71,8 +71,8 @@
                     [(ngModel)]="inputValue3"></textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="add()">Add</button>
                 <button type="button" class="btn btn-secondary" (click)="empty()" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="add()">Add</button>
             </div>
         </div>
     </div>
@@ -101,8 +101,8 @@
                     [(ngModel)]="inputValue3"></textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="edit()">Edit</button>
                 <button type="button" class="btn btn-secondary" (click)="empty()" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="edit()">Edit</button>
             </div>
         </div>
     </div>
